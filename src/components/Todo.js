@@ -1,7 +1,7 @@
-function Todo() {
+function Todo(props) {
   return (
     <div className="card">
-      <h2>TITLE</h2>
+      <h2>{props.title}</h2>
       <div className="action">
         <button className="btn">DELETE</button>
       </div>
