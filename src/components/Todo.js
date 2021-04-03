@@ -1,5 +1,13 @@
+import { useState } from "react";
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
+
 function Todo(props) {
-  function deleteHandler() {}
+  const [showModal, setModal] = useState(false); //useState return an array with 2 elements 1st value second function
+
+  function deleteHandler() {
+    setModal(true);
+  }
   return (
     <div className="card">
       <h2>{props.title}</h2>
@@ -8,6 +16,8 @@ function Todo(props) {
           DELETE
         </button>
       </div>
+      {showModal && <Modal />}
+      {showModal && <Backdrop />}
     </div>
   );
 }
